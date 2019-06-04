@@ -1,7 +1,7 @@
 {
   "name": "cg-web-starter",
   "version": "0.0.1",
-  "description": "react dev environment",
+  "description": "react, mobx, mobx state tree, jest, enzyme, dev environment",
   "main": "index.js",
   "author": "C S Gradwohl",
   "license": "MIT",
