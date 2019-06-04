@@ -1,12 +1,20 @@
 import React from 'react';
-import Layout from '../components/Layout/Layout';
-import styles from '../styles/index.scss';
+import Layout from '../components/Layout';
+
 
 const Index = () => (
   <Layout>
-    <div className={styles.example}>
+    <div className="example">
       <p>we lit!!</p>
     </div>
+    <style jsx>
+      {`
+        .example {
+          font-size: 50px;
+          color: green;
+        }
+      `}
+    </style>
   </Layout>
 );
 
