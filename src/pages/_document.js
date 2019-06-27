@@ -2,6 +2,7 @@
  * _document is only rendered on the server side and NOT on the client side
  * Event handlers like onClick CANNOT be added to this file
  * Allows you to configure global css, normalize the document, and layout of the document
+ * Do any layout that DOES NOT require a browser here.
  */
 
 import React from 'react';
