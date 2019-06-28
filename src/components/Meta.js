@@ -15,10 +15,6 @@ export default () => (
     <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5" />
 
     <link rel="stylesheet" href="../static/css/normalize.css" />
-    {/* <link rel="stylesheet" href="../static/css/font-face.css" /> */}
-    {/* <link rel="stylesheet" href="../static/css/fontawesome.min.css" /> */}
-    {/* <link rel="stylesheet" href="../static/css/brands.min.css" /> */}
-    {/* <link rel="stylesheet" href="../static/css/solid.min.css" /> */}
     <link rel="stylesheet" href="../static/css/cg-bulma.min.css" />
   </Head>
 );
