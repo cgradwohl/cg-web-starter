@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 
 // eslint-disable-next-line react/prop-types
-const Layout = ({ children }) => (
+export default ({ children }) => (
   <div className="layoutStyle">
     <Header />
     {children}
@@ -17,5 +17,3 @@ const Layout = ({ children }) => (
     </style>
   </div>
 );
-
-export default Layout;

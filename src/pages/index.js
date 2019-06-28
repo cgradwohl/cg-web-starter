@@ -1,21 +1,30 @@
 import React from 'react';
-import Layout from '../components/Layout';
-
 
 const Index = () => (
-  <Layout>
+  <>
     <div className="example">
-      <p>we lit!!</p>
+      <p>
+        we lit!!lorem Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Nam ratione natus molestias dignissimos rem qui tempora amet molestiae
+        porro voluptatibus quae aliquam harum, esse culpa inventore quaerat
+        corporis non iusto?
+
+        lorem Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Nam ratione natus molestias dignissimos rem qui tempora amet molestiae
+        porro voluptatibus quae aliquam harum, esse culpa inventore quaerat
+        corporis non iusto?
+      </p>
     </div>
     <style jsx>
       {`
         .example {
+          font-family: 'CritsFont';
           font-size: 50px;
-          color: green;
+          color: black;
         }
       `}
     </style>
-  </Layout>
+  </>
 );
 
 export default Index;

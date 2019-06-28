@@ -5,6 +5,7 @@
  */
 import React from 'react';
 import App, { Container } from 'next/app';
+import Layout from '../components/Layout';
 
 class CGWebStarter extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -23,7 +24,6 @@ class CGWebStarter extends App {
     return (
       <Container>
         <Layout>
-          <p>HI I AM On EveryPage</p>
           <Component {...pageProps} />
         </Layout>
       </Container>
