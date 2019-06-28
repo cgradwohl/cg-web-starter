@@ -1,19 +1,14 @@
 import React from 'react';
-import Header from './Header';
+import Meta from './Meta';
+import Navbar from './Navbar';
 
 // eslint-disable-next-line react/prop-types
 export default ({ children }) => (
-  <div className="layoutStyle">
-    <Header />
+  <>
+    <Meta />
+
+    <Navbar />
+
     {children}
-    <style jsx>
-      {`
-        .layoutStyle {
-          margin: 20px;
-          padding: 20px;
-          border: 1px solid #DDD;
-        }
-      `}
-    </style>
-  </div>
+  </>
 );

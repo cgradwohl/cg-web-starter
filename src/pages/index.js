@@ -18,7 +18,6 @@ const Index = () => (
     <style jsx>
       {`
         .example {
-          font-family: 'CritsFont';
           font-size: 50px;
           color: black;
         }
