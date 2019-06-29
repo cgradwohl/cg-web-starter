@@ -8,7 +8,7 @@ const MyButton = styed.button`
   font-size: 100px;
 `;
 
-const About = () => (
+export default () => (
   <>
     <div className="columns">
       <div className="column">
@@ -54,5 +54,3 @@ const About = () => (
     </div>
   </>
 );
-
-export default About;

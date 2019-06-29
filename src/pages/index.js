@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Index = () => (
+export default () => (
   <>
     <div className="example">
       <p>
@@ -25,5 +25,3 @@ const Index = () => (
     </style>
   </>
 );
-
-export default Index;
