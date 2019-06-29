@@ -1,5 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styed from 'styled-components';
+
+
+const MyButton = styed.button`
+  background: red;
+  font-size: 100px;
+`;
 
 const About = () => (
   <>
@@ -40,7 +47,10 @@ const About = () => (
         </span>
       </div>
 
-      <button className="button is-large is-success" type="button">Button</button>
+      <div className="column">
+        <MyButton>HI</MyButton>
+        <button className="button is-large is-success" type="button">Button</button>
+      </div>
     </div>
   </>
 );

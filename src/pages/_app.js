@@ -42,6 +42,7 @@ class CGWebStarter extends App {
           <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5" />
           <link rel="stylesheet" href="../static/css/cg-bulma.min.css" />
         </Head>
+
         <Layout>
           <Component {...pageProps} />
         </Layout>
