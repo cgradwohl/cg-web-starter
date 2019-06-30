@@ -6,33 +6,12 @@ import * as authClient from '../utils/authClient';
 const AuthContext = React.createContext();
 
 function AuthProvider(props) {
-  const [firstAttemptFinished, setFirstAttemptFinished] = React.useState(false);
   const {
     data = { user: null, listItems: [] },
-    error,
-    isRejected,
-    isSettled,
     reload,
   } = useAsync({
     promiseFn: bootstrapAppData,
   });
-
-  React.useLayoutEffect(() => {
-    if (isSettled) {
-      setFirstAttemptFinished(true);
-    }
-  }, [isSettled]);
-
-  if (!firstAttemptFinished) {
-    if (isRejected) {
-      return (
-        <div css={{ color: 'red' }}>
-          <p>Uh oh... There is a problem. Try refreshing the app.</p>
-          <pre>{error.message}</pre>
-        </div>
-      );
-    }
-  }
 
   const login = form => authClient.login(form).then(reload);
   const register = form => authClient.register(form).then(reload);

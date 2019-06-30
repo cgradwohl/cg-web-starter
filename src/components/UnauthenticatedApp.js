@@ -2,6 +2,6 @@ import React from 'react';
 
 export default () => (
   <div>
-    <input type="text" />
+    <button className="button is-danger" type="button">Un Auth</button>
   </div>
 );
