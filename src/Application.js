@@ -9,29 +9,28 @@ import { useUser } from './context/UserContext';
 import Navbar from './components/Navbar';
 
 // eslint-disable-next-line react/prop-types
-export default ({ Component, pageProps }) => {
-  const user = useUser();
-  return user
-    ? (
-      // AuthenticatedApp
-      <Container>
-        <Navbar />
-        <Component {...pageProps} />
-      </Container>
+const AuthenticatedApp = ({ Component, pageProps }) => (
+  <Container>
+    <Navbar />
+    <Component {...pageProps} />
+  </Container>
+);
 
-    )
-    : (
-      <Container>
-        <div className="field">
-          <div className="control">
-            <input className="input" type="text" placeholder="username" />
-          </div>
-        </div>
-        <div className="field">
-          <div className="control">
-            <input className="input" type="text" placeholder="password" />
-          </div>
-        </div>
-      </Container>
-    );
+// eslint-disable-next-line react/prop-types
+const UnauthenticatedApp = ({ Component, pageProps }) => (
+  <Container>
+    <button className="button" type="button" />
+    <Component {...pageProps} />
+  </Container>
+);
+
+// eslint-disable-next-line react/prop-types
+export default ({ Component, pageProps }) => {
+  console.log('yo', pageProps);
+  const user = useUser();
+  console.log('user', user);
+  // return user
+  //   ? <AuthenticatedApp Component={Component} pageProps={pageProps} />
+  //   : <UnauthenticatedApp />;
+  return <UnauthenticatedApp Component={Component} pageProps={pageProps} />;
 };

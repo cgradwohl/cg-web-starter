@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from 'next/app';
-import Layout from './Layout';
 import { useAuth } from './context/AuthContext';
 
 // eslint-disable-next-line react/prop-types
@@ -54,8 +53,8 @@ export default () => {
 
   return (
     <Container>
-        <LoginForm onSubmit={login} buttonText="Login" />
-        <LoginForm onSubmit={register} buttonText="Register" />
+      <LoginForm onSubmit={login} buttonText="Login" />
+      <LoginForm onSubmit={register} buttonText="Register" />
     </Container>
   );
 };

@@ -4,17 +4,21 @@
  * Do any layout that does require a browser here. i.e. Dynamic Layout Component, Meta data (CDN)
  */
 import React from 'react';
-import App from 'next/app';
+import App, { Container } from 'next/app';
+import Router from 'next/router';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import fontawesome from '../utils/fontawesome';
 import Layout from '../Layout';
 import Navbar from '../components/Navbar';
-import AppProviders from '../context';
+import UserContext from '../context/UserContext';
 
 library.add(fontawesome);
 
+export default class MyApp extends App {
+  state = {
+    user: null,
+  };
 
-class CGWebStarter extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
@@ -25,26 +29,52 @@ class CGWebStarter extends App {
     return { pageProps };
   }
 
+  componentDidMount = () => {
+    const user = localStorage.getItem('coolapp-user');
+    if (user) {
+      this.setState({
+        user,
+      });
+    } else {
+      Router.push('/about');
+    }
+  };
+
+  signIn = (username) => {
+    localStorage.setItem('coolapp-user', username);
+
+    this.setState(
+      {
+        user: username,
+      },
+      () => {
+        Router.push('/');
+      },
+    );
+  };
+
+  signOut = () => {
+    localStorage.removeItem('coolapp-user');
+    this.setState({
+      user: null,
+    });
+    Router.push('/signin');
+  };
+
   render() {
     const { Component, pageProps } = this.props;
-    // 1. get data from local storage
-    // 2. authenticate the auth data
-    //      if the auth data is valid,
-    //        then add the auth data to user context
-    //        then take user to Index page.
-    //      else
-    //        add the non auth data to user context (default)
-    //        take the user to the Login page
 
     return (
-      <AppProviders>
-        <Layout>
-          <Navbar />
-          <Component {...pageProps} />
-        </Layout>
-      </AppProviders>
+      <Container>
+        <UserContext.Provider
+          value={{ user: this.state.user, signIn: this.signIn, signOut: this.signOut }}
+        >
+          <Layout>
+            <Navbar />
+            <Component {...pageProps} />
+          </Layout>
+        </UserContext.Provider>
+      </Container>
     );
   }
 }
-
-export default CGWebStarter;
