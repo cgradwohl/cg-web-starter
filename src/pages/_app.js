@@ -7,8 +7,8 @@ import React from 'react';
 import App from 'next/app';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import fontawesome from '../utils/fontawesome';
-import Application from '../Application';
 import Layout from '../Layout';
+import Navbar from '../components/Navbar';
 import AppProviders from '../context';
 
 library.add(fontawesome);
@@ -39,7 +39,8 @@ class CGWebStarter extends App {
     return (
       <AppProviders>
         <Layout>
-          <Application Component={Component} pageProps={pageProps} />
+          <Navbar />
+          <Component {...pageProps} />
         </Layout>
       </AppProviders>
     );
