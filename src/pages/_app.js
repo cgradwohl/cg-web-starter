@@ -7,7 +7,8 @@ import React from 'react';
 import App from 'next/app';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import fontawesome from '../utils/fontawesome';
-import Application from '../components/Application';
+import Application from '../Application';
+import Layout from '../Layout';
 import AppProviders from '../context';
 
 library.add(fontawesome);
@@ -26,10 +27,20 @@ class CGWebStarter extends App {
 
   render() {
     const { Component, pageProps } = this.props;
+    // 1. get data from local storage
+    // 2. authenticate the auth data
+    //      if the auth data is valid,
+    //        then add the auth data to user context
+    //        then take user to Index page.
+    //      else
+    //        add the non auth data to user context (default)
+    //        take the user to the Login page
 
     return (
       <AppProviders>
-        <Application Component={Component} pageProps={pageProps} />
+        <Layout>
+          <Application Component={Component} pageProps={pageProps} />
+        </Layout>
       </AppProviders>
     );
   }

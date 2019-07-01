@@ -5,6 +5,8 @@ import { UserProvider } from './UserContext';
 
 export default ({ children }) => (
   <AuthProvider>
-    <UserProvider>{children}</UserProvider>
+    <UserProvider>
+      {children}
+    </UserProvider>
   </AuthProvider>
 );
